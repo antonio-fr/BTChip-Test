@@ -13,37 +13,46 @@ http://btchip.github.io/btchip-doc/bitcoin-technical.html#_get_operation_mode
 
 Needed for BTChip-Test:
 -----------------------
-All you need is BTChip-python
+All you need is **BTChip-python**
 https://github.com/btchip/btchip-python
 
 But that requires:
-PyUSB v1.0 http://downloads.sourceforge.net/project/pyusb/PyUSB%201.0/1.0.0-alpha-2/pyusb-1.0.0a2.zip
+**PyUSB** v1.0 http://downloads.sourceforge.net/project/pyusb/PyUSB%201.0/1.0.0-alpha-2/pyusb-1.0.0a2.zip
 ( python 2.7 needed )
 
-PyUSB requires libusb
+PyUSB requires **libusb**
+_
+_
 
+- For **Windows** :
 
-- For Windows :
 1) install LibUsb-win32
 http://downloads.sourceforge.net/project/libusb-win32/libusb-win32-releases/1.2.6.0/libusb-win32-bin-1.2.6.0.zip
 Mainly, you need to copy dll in system windows file (Read http://pastebin.com/raw.php?i=e3AHMUDR)
+
 2) Zadig
 http://zadig.akeo.ie/downloads/zadig_2.1.0.exe
 or XP version : http://zadig.akeo.ie/downloads/zadig_xp_2.1.0.exe
 Connect BTCHip
 Launch Zadig
 Install libusb-win32 driver for "Plug-up" device
+
 3) Install PyUSB
 Get PyUSB zip upper
 unzip and launch in cmd (in unzipped folder)
 "setup.py install"
 
+_
 
-- For Linux :
+- For **Linux** :
+
 1) Install libusb from your package manager
+
 2) Install PyUSB
 Get PyUSB zip upper
+
 unzip and launch in console (in dir unzipped)
+
 "python27 setup.py install"
 
 
