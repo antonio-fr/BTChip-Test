@@ -21,9 +21,9 @@ But that requires:
 ( python 2.7 needed )
 
 PyUSB requires **libusb**
-_
-_
-
+  
+  
+  
 - For **Windows** :
 
 1) install LibUsb-win32
@@ -32,7 +32,7 @@ Mainly, you need to copy dll in system windows file (Read http://pastebin.com/ra
 
 2) Zadig
 http://zadig.akeo.ie/downloads/zadig_2.1.0.exe
-or XP version : http://zadig.akeo.ie/downloads/zadig_xp_2.1.0.exe
+or XP version : http://zadig.akeo.ie/downloads/zadig_xp_2.1.0.exe  
 Connect BTCHip  
 Launch Zadig  
 Install libusb-win32 driver for "Plug-up" device  
@@ -41,6 +41,7 @@ Install libusb-win32 driver for "Plug-up" device
 Get PyUSB zip upper  
 unzip and launch in cmd (in unzipped folder)  
 ```setup.py install```  
+  
   
   
 - For **Linux** :
