@@ -11,7 +11,7 @@ BTChip-API is documented here:
 http://btchip.github.io/btchip-doc/bitcoin-technical.html#_get_operation_mode
 
 
->> Needed for BTChip-Test:
+> Needed for BTChip-Test:
 All you need is BTChip-python
 https://github.com/btchip/btchip-python
 
@@ -46,13 +46,13 @@ unzip and launch in console (in dir unzipped)
 "python27 setup.py install"
 
 
->> Use BTChip-Test :
+> Use BTChip-Test :
 Copy main.py of this soft in btchip-python/btchip folder
 (folder get from btchip-python-master in github link upper)
 Launch "main.py"
 Enter PIN when prompted
 
->> Licence :
+> Licence :
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
