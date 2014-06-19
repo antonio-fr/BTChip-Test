@@ -33,35 +33,33 @@ Mainly, you need to copy dll in system windows file (Read http://pastebin.com/ra
 2) Zadig
 http://zadig.akeo.ie/downloads/zadig_2.1.0.exe
 or XP version : http://zadig.akeo.ie/downloads/zadig_xp_2.1.0.exe
-Connect BTCHip
-Launch Zadig
-Install libusb-win32 driver for "Plug-up" device
+Connect BTCHip  
+Launch Zadig  
+Install libusb-win32 driver for "Plug-up" device  
 
-3) Install PyUSB
-Get PyUSB zip upper
-unzip and launch in cmd (in unzipped folder)
-"setup.py install"
-
-_
-
+3) Install PyUSB  
+Get PyUSB zip upper  
+unzip and launch in cmd (in unzipped folder)  
+```setup.py install```  
+  
+  
 - For **Linux** :
 
 1) Install libusb from your package manager
 
-2) Install PyUSB
-Get PyUSB zip upper
-
-unzip and launch in console (in dir unzipped)
-
-"python27 setup.py install"
+2) Install PyUSB  
+Get PyUSB zip upper  
+unzip and launch in console (in dir unzipped)  
+  
+```python27 setup.py install```
 
 
 Use BTChip-Test :
 -----------------
-Copy main.py of this soft in btchip-python/btchip folder
-(folder get from btchip-python-master in github link upper)
-Launch "main.py"
-Enter PIN when prompted
+Copy main.py of this soft in btchip-python/btchip folder  
+(folder get from btchip-python-master in github link upper)  
+Launch "main.py"  
+Enter PIN when prompted  
 
 
 Licence :
