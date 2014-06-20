@@ -8,7 +8,7 @@ Basic test samples for BTChip API in python
 This is a basic test sample for BTChip-API in Python
 
 BTChip-API is documented here:
-http://btchip.github.io/btchip-doc/bitcoin-technical.html#_get_operation_mode
+http://btchip.github.io/btchip-doc/bitcoin-technical.html
 
 
 Needed for BTChip-Test:
@@ -52,7 +52,7 @@ unzip and launch in cmd (in unzipped folder)
 Get PyUSB zip upper  
 unzip and launch in console (in dir unzipped)  
   
-```python27 setup.py install```
+```python2.7 setup.py install```
 
 
 Use BTChip-Test :
