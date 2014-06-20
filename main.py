@@ -22,19 +22,16 @@ class UserBTChip(btchip):
 	def close(self):
 		self.dongle.close()
 	
-	def exchange(self,intr,p1,p2,params):
-		# dongle.exchange(codeINSTR_GET,p1,p2, 2 )    < Wait for 2 bytes long response
-		# dongle.exchange(codeINSTR_SET,p1,p2,"data") < Send data
+	def exchange(self,intr,p1,p2,params=""):
+		# dongle.exchange(codeINSTR_GET,p1,p2 )       < Read response
+		# dongle.exchange(codeINSTR_SET,p1,p2,"data") < Send data and return response
 		apdu = [ self.BTCHIP_CLA, intr, p1, p2 ]
-		if isinstance(params,int):
-			apdu.append(params)
-		else:
-			apdu.append(len(params))
-			apdu.extend(bytearray(params))
+		apdu.append(len(params))
+		apdu.extend(bytearray(params))
 		return self.dongle.exchange(bytearray(apdu))
 	
 	def getversion(self):
-		return self.exchange(self.BTCHIP_INS_GET_FIRMWARE_VERSION,0,0,5)
+		return self.exchange(self.BTCHIP_INS_GET_FIRMWARE_VERSION,0,0)
 	
 	def disp_version(self):
 		resp = self.getversion()
@@ -45,7 +42,7 @@ class UserBTChip(btchip):
 		else: print "No"
 	
 	def getmode(self):
-		return self.exchange(self.BTCHIP_INS_GET_OPERATION_MODE,0,0,1)
+		return self.exchange(self.BTCHIP_INS_GET_OPERATION_MODE,0,0)
 	
 	def disp_mode(self):
 		resp = self.getmode()
