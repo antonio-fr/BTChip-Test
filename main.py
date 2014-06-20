@@ -22,11 +22,15 @@ class UserBTChip(btchip):
 	def close(self):
 		self.dongle.close()
 	
-	def exchange(self,intr,p1,p2,lenout,params=None):
-		apdu = [ self.BTCHIP_CLA, intr, p1, p2, lenout ]
-		if params!=None:
+	def exchange(self,intr,p1,p2,params):
+		# dongle.exchange(codeINSTR_GET,p1,p2, 2 )    < Wait for 2 bytes long response
+		# dongle.exchange(codeINSTR_SET,p1,p2,"data") < Send data
+		apdu = [ self.BTCHIP_CLA, intr, p1, p2 ]
+		if isinstance(params,int):
+			apdu.append(params)
+		else:
 			apdu.append(len(params))
-			apdu.extend(params)
+			apdu.extend(bytearray(params))
 		return self.dongle.exchange(bytearray(apdu))
 	
 	def getversion(self):
@@ -51,7 +55,7 @@ class UserBTChip(btchip):
 		if respi&0x02: print "relaxed wallet"
 		if respi&0x04: print "server"
 		if respi&0x08: print "developer"
-		if respi&0x80: print "forward setup"
+		if respi&0x80: print "forward setup not fully done"
 
 try:
 	mydongle = UserBTChip(getDongle())
@@ -65,15 +69,14 @@ mydongle.disp_mode()
 
 pin = raw_input("Enter PIN:")
 try:
-	mydongle.verifyPin(pin)
+	mydongle.exchange(mydongle.BTCHIP_INS_VERIFY_PIN,0,0,pin)
 except:
 	print "Wrong PIN !"
 	quit()
 print "PIN OK"
 
 print "Please Wait..."
-adr = mydongle.getWalletPublicKey( 2, 1, 1)['address']
+adr = mydongle.getWalletPublicKey( 2, 0, 0)['address']
 print "First Address is", adr
 
 mydongle.close()
-
